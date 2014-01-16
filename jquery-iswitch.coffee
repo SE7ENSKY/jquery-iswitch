@@ -1,11 +1,11 @@
 ###
 @name jquery-iswitch
 @description Reinvent the iOS-style switch.
-@version 1.0.1
+@version 1.0.2
 @author Se7enSky studio <info@se7ensky.com>
 ###
 
-###! jquery-iswitch 1.0.1 http://github.com/Se7enSky/jquery-iswitch###
+###! jquery-iswitch 1.0.2 http://github.com/Se7enSky/jquery-iswitch###
 
 plugin = ($) ->
 
@@ -24,8 +24,8 @@ plugin = ($) ->
 
 		pwnCheckbox: ->
 			@$el.hide()
-			@$handle = $('<div class="iswitch__handle"></div>')
-			@$container = $('<div class="iswitch__container"></div>').append @$handle
+			@$handle = $('<i class="iswitch__handle"></i>')
+			@$container = $('<ins class="iswitch__container"></ins>').append @$handle
 			@$container.on "click", =>
 				if @preventClick
 					@preventClick = off
