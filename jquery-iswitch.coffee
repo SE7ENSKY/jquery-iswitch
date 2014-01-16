@@ -1,11 +1,11 @@
 ###
 @name jquery-iswitch
 @description Reinvent the iOS-style switch.
-@version 1.0.0
+@version 1.0.1
 @author Se7enSky studio <info@se7ensky.com>
 ###
 
-###! jquery-iswitch 1.0.0 http://github.com/Se7enSky/jquery-iswitch###
+###! jquery-iswitch 1.0.1 http://github.com/Se7enSky/jquery-iswitch###
 
 plugin = ($) ->
 
@@ -54,12 +54,12 @@ plugin = ($) ->
 				startX = event.pageX or event.originalEvent.changedTouches[0].pageX
 				startMargin = parseFloat @$handle.css("margin-left").replace("px", "")
 				checked = @$el.prop "checked"
+				marginMin = 0
+				marginMax = parseFloat(@$container.css("width").replace("px", "")) - parseFloat(@$container.css("padding-left").replace("px", "")) - parseFloat(@$container.css("padding-right").replace("px", "")) - parseFloat(@$handle.css("width").replace("px", ""))
 				mousemoveHandler = (e) =>
 					@preventClick = on
 					e.preventDefault()
 					dx = startX - (event.pageX or event.originalEvent.changedTouches[0].pageX)
-					marginMin = 0
-					marginMax = 50
 					margin = Math.max marginMin, Math.min marginMax, startMargin - dx
 					@$handle.css marginLeft: "#{margin}px"
 					checked = margin > (marginMin + marginMax) / 2
